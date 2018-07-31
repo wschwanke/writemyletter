@@ -26,9 +26,9 @@ module.exports = {
       errors: true,
     },
     // Enabled this for Docker on Windows so hotload works.
-    // watchOptions: {
-    //   poll: true,
-    // },
+    watchOptions: {
+      poll: true,
+    },
     compress: true,
     public: 'http://0.0.0.0:3001',
     proxy: {

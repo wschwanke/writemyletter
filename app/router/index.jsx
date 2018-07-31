@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import Loadable from 'react-loadable';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 /**
