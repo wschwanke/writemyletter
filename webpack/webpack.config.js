@@ -121,6 +121,12 @@ let webpackConfig = {
           priority: 10,
           enforce: true,
         },
+        styles: {
+          name: 'styles',
+          test: /\.scss$/,
+          chunks: 'all',
+          enforce: true
+        }
       },
     },
   },
@@ -150,6 +156,13 @@ let webpackConfig = {
       filename: !config.env.production ? 'styles/[name].css' : 'styles/[name].[hash].css',
       chunkFilename: !config.env.production ? 'styles/[name].css' : 'styles/[name].[hash].css',
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: '../index.html',
+      template: join(config.paths.root, 'app/index.html'),
+      alwaysWriteToDisk: true,
+    }),
+    new HtmlWebpackHarddiskPlugin(),
     new FriendlyErrorsWebpackPlugin(),
   ],
 
