@@ -9,9 +9,7 @@ const Body = ({ title, children }) => {
   return (
     <div className="content">
       <Header />
-      <div>
-        {children}
-      </div>
+      {children}
       <Footer />
     </div>
   );

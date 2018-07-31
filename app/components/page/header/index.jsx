@@ -5,18 +5,16 @@ import Navigation from './navigation';
 
 
 const Header = () => (
-  <div className="Header__container--border">
-    <header className="Header__container">
-      <div className="Header">
-        <div className="Header__logo">
-          <Logo />
-        </div>
-        <div className="Header__content">
-          <Navigation />
-        </div>
+  <header className="Header container">
+    <div className="row">
+      <div className="Header__logo col">
+        <Logo />
       </div>
-    </header>
-  </div>
+      <div className="Header__content col">
+        <Navigation />
+      </div>
+    </div>
+  </header>
 );
 
 export default Header;
