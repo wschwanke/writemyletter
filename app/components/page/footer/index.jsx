@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import moment from 'moment';
 
 const Footer = () => (
   <footer className="Footer">
-    Footer
+    <p className="Footer__copyright">Write My Letter {moment().format('YYYY')} &copy; Will Schwanke</p>
   </footer>
 );
 

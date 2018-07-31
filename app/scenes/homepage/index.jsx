@@ -2,7 +2,6 @@
  * External dependencies
  */
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 /**
@@ -13,10 +12,10 @@ import Body from 'components/page/body';
 const Homepage = () => (
   <Body>
     <Helmet>
-      <title>Write My Letter - Homepage</title>
+      <title>Write My Letter - Home</title>
       <meta name="keywords" content="keywords go here dude" />
     </Helmet>
   </Body>
 );
 
-export default withRouter(Homepage);
+export default Homepage;
