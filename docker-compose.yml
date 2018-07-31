@@ -1,0 +1,55 @@
+version: '3.6'
+
+services:
+  web:
+    image: "node:carbon"
+    user: "node"
+    depends_on:
+      - db
+    working_dir: /home/node/app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/home/node/app
+    links:
+      - "db:database"
+    command: "yarn start"
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ganuroth12
+    volumes:
+      - db-volume:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ganuroth12
+    links:
+      - "db:mongo"
+  watch:
+    image: "node:carbon"
+    user: "node"
+    depends_on:
+      - web
+    working_dir: /home/node/app
+    restart: always
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/home/node/app
+    ports:
+      - "3001:3001"
+    links: 
+      - "web:proxy"
+    command: "yarn watch"
+volumes:
+  db-volume:

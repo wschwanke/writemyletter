@@ -1,0 +1,11 @@
+// Internal variables
+@import 'common/variables';
+
+// Import bootstrap SCSS from node_modules
+@import '~bootstrap/scss/bootstrap';
+
+// Internal dependencies
+@import 'components/all';
+@import 'layout/all';
+@import 'scenes/all';
+@import 'themes/all';
