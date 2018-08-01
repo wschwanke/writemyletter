@@ -7,9 +7,11 @@ const Body = ({ title, children }) => {
   document.title = title;
 
   return (
-    <div className="content">
+    <div className="Body">
       <Header />
-      {children}
+      <div className="content">
+        {children}
+      </div>
       <Footer />
     </div>
   );

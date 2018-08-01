@@ -1,0 +1,9 @@
+.Body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+Body .content {
+  flex: 1;
+}
